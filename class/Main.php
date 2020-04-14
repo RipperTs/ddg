@@ -88,33 +88,23 @@ class Main
      */
     public function download()
     {
-
         $file = $_GET['file'];
-
         require './class/File.php';
         $file = trim($_GET['file']);
-
         $path = FILE_PATH;
-
         $file_obj = new File($path);
-
         $file_list = $file_obj->getFileList($file);
-
         //取最新的
         $data = $file_obj->getFileData($file . '/' . $file_list[0]);
-
-
         ob_start();
         //加载模板
         $this->view('template_download', ['data' => $data, 'database' => $file]);
         $content = ob_get_contents();
         ob_clean();
-
         header("Content-type: application/octet-stream");
         header("Accept-Ranges: bytes");
         header("Accept-Length: " . strlen($content));
         header("Content-Disposition: attachment; filename=" . $file . '.html');
-
         echo $content;
     }
 
@@ -152,4 +142,5 @@ class Main
 
         show_msg('成功', 'index.php');
     }
+
 }
