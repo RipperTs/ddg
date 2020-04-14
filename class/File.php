@@ -1,4 +1,9 @@
 <?php
+
+/**
+ * 文件操作类
+ * Class File
+ */
 class File
 {
     private $path;
@@ -32,6 +37,9 @@ class File
         });
     }
 
+    /**
+     * 删除缓存文件(所有)
+     */
     public function removeAll()
     {
         $dirname=$this->path;
@@ -40,6 +48,10 @@ class File
 		file_put_contents($dirname.'index.html','');
     }
 
+    /**
+     * 删除缓存文件(单个)
+     * @param $dir
+     */
     public function remove($dir)
     {
         $dirname=$this->path.$dir;
@@ -70,13 +82,17 @@ class File
                     }
                 }
             }
-
             closedir($temp_dir);
             rmdir($dirname);
         }
     }
 
 
+    /**
+     * 获取数据字典列表
+     * @param $dir
+     * @return array
+     */
     public function getFileList($dir)
     {
         $path=$this->path.$dir;
@@ -94,10 +110,14 @@ class File
             return ($a_time > $b_time) ? -1 : 1;
 
         });
-
         return $data;
     }
 
+    /**
+     * 获取对应文件列表
+     * @param $file
+     * @return mixed
+     */
     public function getFileData($file)
     {
         $path=$this->path.$file;
