@@ -1,37 +1,24 @@
-# DDG数据字典生成器
+# dictionary
 
-#### 介绍
-MySQL 数据字典自动生成器，拥有历史生成查看，数据库选择生成，导出方式
+#### 项目介绍
+MySQL数据字典生成工具
 
 #### 软件架构
-软件架构说明
+没有啥子架构，纯手写，文件操作数据库操作都是自己简单封装的。
 
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 使用说明
-
-1.  xxxx
-2.  xxxx
-3.  xxxx
-
-#### 参与贡献
-
-1.  Fork 本仓库
-2.  新建 Feat_xxx 分支
-3.  提交代码
-4.  新建 Pull Request
+1. 入口文件index.php,可以单独配置一个域名，或者是放到某个项目里面，访问 dictionary目录即可。
+2. 配置config.php的数据库账号和密码。
+3. 在mac或者linux环境下面，注意需要设置runtime目录权限为777, chmod -R 777 runtime
 
 
-#### 码云特技
+#### 功能说明
 
-1.  使用 Readme\_XXX.md 来支持不同的语言，例如 Readme\_en.md, Readme\_zh.md
-2.  码云官方博客 [blog.gitee.com](https://blog.gitee.com)
-3.  你可以 [https://gitee.com/explore](https://gitee.com/explore) 这个地址来了解码云上的优秀开源项目
-4.  [GVP](https://gitee.com/gvp) 全称是码云最有价值开源项目，是码云综合评定出的优秀开源项目
-5.  码云官方提供的使用手册 [https://gitee.com/help](https://gitee.com/help)
-6.  码云封面人物是一档用来展示码云会员风采的栏目 [https://gitee.com/gitee-stars/](https://gitee.com/gitee-stars/)
+1. 选择数据库进行生成数据字典，要记录生成的日期，还可以更新数据字典，并形成历史记录，查看各个时间生成的数据库字典。
+2. 生成的数据能够缓存。
+3. 能下载生成的数据字典。
+		
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0709/084838_b344f66e_361161.png "index.png")
+![输入图片说明](https://images.gitee.com/uploads/images/2018/0709/084851_33a14502_361161.png "show.png")
